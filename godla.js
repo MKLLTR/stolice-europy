@@ -1,0 +1,56 @@
+// Godła państw: nazwy plików w Wikimedia Commons (właściwość P94 w Wikidata).
+// Lokalne kopie pobiera skrypt pobierz_godla.js do folderu godla/.
+const COA = {
+  'Albania': 'Coat of arms of Albania.svg',
+  'Andora': 'Coat of Arms of Andorra.svg',
+  'Austria': 'Coat of arms of Austria.svg',
+  'Belgia': 'Great coat of arms of Belgium.svg',
+  'Białoruś': 'Coat of arms of Belarus (2020–present).svg',
+  'Bośnia i Hercegowina': 'Coat of arms of Bosnia and Herzegovina.svg',
+  'Bułgaria': 'Coat of arms of Bulgaria.svg',
+  'Chorwacja': 'Coat of arms of Croatia.svg',
+  'Cypr': 'Coat of arms of Cyprus (2006).svg',
+  'Czarnogóra': 'Coat of arms of Montenegro.svg',
+  'Czechy': 'Coat of arms of the Czech Republic.svg',
+  'Dania': 'National coat of arms of Denmark.svg',
+  'Estonia': 'Coat of arms of Estonia.svg',
+  'Finlandia': 'Coat of arms of Finland.svg',
+  'Francja': 'Arms of the French Republic.svg',
+  'Grecja': 'Coat of arms of Greece.svg',
+  'Hiszpania': 'Escudo de España (variant).svg',
+  'Holandia': 'Royal coat of arms of the Netherlands.svg',
+  'Irlandia': 'Coat of arms of Ireland.svg',
+  'Islandia': 'Coat of arms of Iceland.svg',
+  'Liechtenstein': 'Staatswappen-Liechtensteins.svg',
+  'Litwa': 'Coat of arms of Lithuania.svg',
+  'Luksemburg': 'Greater coat of arms of the grand-duchy of Luxembourg.svg',
+  'Łotwa': 'Coat of arms of Latvia.svg',
+  'Macedonia Północna': 'Coat of arms of North Macedonia.svg',
+  'Malta': 'Coat of arms of Malta.svg',
+  'Mołdawia': 'Coat of arms of Moldova.svg',
+  'Monako': 'Coat of arms of Monaco.svg',
+  'Niemcy': 'Coat of arms of Germany.svg',
+  'Norwegia': 'Coat of arms of Norway.svg',
+  'Polska': 'Herb Polski.svg',
+  'Portugalia': 'Coat of arms of Portugal.svg',
+  'Rosja': 'Coat of Arms of the Russian Federation.svg',
+  'Rumunia': 'Coat of arms of Romania.svg',
+  'San Marino': 'Coat of arms of San Marino.svg',
+  'Serbia': 'Coat of arms of Serbia.svg',
+  'Słowacja': 'Coat of arms of Slovakia.svg',
+  'Słowenia': 'Coat of arms of Slovenia.svg',
+  'Szwajcaria': 'Coat of arms of Switzerland.svg',
+  'Szwecja': 'Great coat of arms of Sweden.svg',
+  'Ukraina': 'Coat of Arms of Ukraine (Pantone).svg',
+  'Watykan': 'Coat of arms of Vatican City (2023–present).svg',
+  'Węgry': 'Coat of arms of Hungary.svg',
+  'Wielka Brytania': 'Coat of arms of the United Kingdom (2022, variant 2).svg',
+  'Włochy': 'Emblem of Italy.svg',
+  'Kosowo': 'Emblem of the Republic of Kosovo.svg',
+};
+
+// Nazwa lokalnego pliku, np. "Bośnia i Hercegowina" -> "bosnia_i_hercegowina.png"
+const coaFile = (country) =>
+  country.toLowerCase().replace(/ł/g, 'l').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '_') + '.png';
+
+module.exports = { COA, coaFile };

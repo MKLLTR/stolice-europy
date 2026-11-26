@@ -1,0 +1,5 @@
+# Netlify publikuje gotowy folder public/ (bez kroku budowania).
+# Po zmianie notatek: node build.js, potem commit i push.
+[build]
+  publish = "public"
+  command = ""
